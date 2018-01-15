@@ -38,6 +38,6 @@ set nu
 function PythonHeader()
     call setline(1, "#!/usr/bin/python")
     call setline(2, "# -*- coding:utf-8 -*-")
-    normal 0
+    normal G
 endfunction
 autocmd BufNewFile *.py call PythonHeader() 
