@@ -1,0 +1,28 @@
+linux vim 编写代码python使用tab补全
+
+ 
+
+安装配置：
+
+wget https://github.com/rkulla/pydiction/archive/master.zip
+unzip -q master
+mv pydiction-master pydiction
+mkdir -p ~/.vim/tools/pydiction
+cp -r pydiction/after ~/.vim
+cp pydiction/complete-dict ~/.vim/tools/pydiction
+
+确保文件结构如下：
+
+# tree ~/.vim
+/root/.vim
+├── after
+│   └── ftplugin
+│       └── python_pydiction.vim
+└── tools
+    └── pydiction
+        └── complete-dict
+创建~/.vimrc,确保其中内容如下：
+
+# cat ~/.vimrc
+filetype plugin on
+let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'
